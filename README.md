@@ -1,5 +1,5 @@
-# KituraBotFacebookMessenger
-Swift Kitura Facebook Messenger Webhook implemented according to the KituraBot multi-channel framework.
+# KituraBotSlack
+Swift Kitura Slack Webhook implemented according to the KituraBot multi-channel framework.
 
 **Warning: This is work in progress**
 
@@ -13,9 +13,9 @@ Please see Facebook documentation for configuration at https://developers.facebo
 
 This Swift class is implemented according to the KituraBotProtocol defined in the Kitura Bot Package.
 
-The Api are super simple.  You only need to initialize a KituraBotFacebookMessenger with all the specific Facebook Messenger parameters (appSecret, validationTokenand pageAccessToken, webHookPath) and pass this object to the KituraBot addChannel method
+The Api are super simple.  You only need to initialize a KituraBotSlack with all the specific Facebook Messenger parameters (appSecret, validationTokenand pageAccessToken, webHookPath) and pass this object to the KituraBot addChannel method
 
-    /// Initialize a `KituraBotFacebookMessenger` instance.
+    /// Initialize a `KituraBotSlack` instance.
     ///
     /// - Parameter appSecret: App Secret can be retrieved from the App Dashboard.
     /// - Parameter validationToken: Arbitrary value used to validate a webhook.
@@ -69,7 +69,7 @@ Please view KituaBotFrontendEchoSample Swift Kitura sample project at https://gi
     //2. Add specific channel to the KituraBot instance
     do {
         //2.1 Add Facebook Messenger channel
-        try bot.addChannel(channelName: "FacebookEcho", channel: KituraBotFacebookMessenger(appSecret: Configuration.appSecret, validationToken: Configuration.validationToken, pageAccessToken: Configuration.pageAccessToken, webHookPath: "/webhook"))
+        try bot.addChannel(channelName: "FacebookEcho", channel: KituraBotSlack(appSecret: Configuration.appSecret, validationToken: Configuration.validationToken, pageAccessToken: Configuration.pageAccessToken, webHookPath: "/webhook"))
         
         //2.1 Add Slack, Skype etc. channels
         //try bot.addChannel(channelName: "SlackEcho1", KituraBotSlack(slackConfig: "xxx", webHookPath: "/echo1slackcommand"))
